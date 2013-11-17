@@ -29,7 +29,7 @@ FOREIGN KEY(snimi) REFERENCES sauna(snimi)
 CREATE TABLE ilmoittautuminen(
 knimi varchar(128),
 ID int,
-PRIMARY KEY (knimi,ID)
+PRIMARY KEY (knimi,ID),
 FOREIGN KEY (ID) REFERENCES saunavuoro(ID),
 FOREIGN KEY (knimi) REFERENCES kayttaja(knimi)
 );
