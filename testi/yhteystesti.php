@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php
-        require_once 'tietokanta.php';
+        require_once '../libs/tietokanta.php';
 $sql = "select 1+1 as two";
 $kysely = $yhteys->prepare($sql);
 
