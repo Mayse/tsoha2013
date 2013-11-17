@@ -18,21 +18,18 @@ FOREIGN KEY(knimi) REFERENCES kayttaja(knimi)
 );
 
 CREATE TABLE saunavuoro(
+ID int NOT NULL AUTO_INCREMENT,
 snimi varchar(128),
 alkuaika datetime,
 loppuaika datetime,
-PRIMARY KEY (snimi,alkuaika,loppuaika),
-FOREIGN KEY (snimi) REFERENCES sauna(snimi)
+PRIMARY KEY (ID),
+FOREIGN KEY(snimi) REFERENCES sauna(snimi)
 );
 
 CREATE TABLE ilmoittautuminen(
 knimi varchar(128),
-snimi varchar(128),
-alkuaika datetime,
-loppuaika datetime,
-FOREIGN KEY (knimi) REFERENCES kayttaja(knimi),
-FOREIGN KEY (snimi) REFERENCES sauna(snimi),
-FOREIGN KEY (alkuaika) REFERENCES saunavuoro(alkuaika),
-FOREIGN KEY (loppuaika) REFERENCES saunavuoro(loppuaika),
-PRIMARY KEY (knimi,snimi,alkuaika,loppuaika)
+ID int,
+PRIMARY KEY (knimi,ID)
+FOREIGN KEY (ID) REFERENCES saunavuoro(ID),
+FOREIGN KEY (knimi) REFERENCES kayttaja(knimi)
 );
