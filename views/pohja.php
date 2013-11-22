@@ -6,13 +6,17 @@ and open the template in the editor.
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
+        <title>Saunatietokanta</title>
     </head>
     <body>
+        <h1>Saunatietokanta</h1>
+        
+        <?php if(isset($data->virheViesti))
+     echo $data->virheViesti;
+            ?>
+        
+        <?php require $sivu; ?>
 
-        <?php
-        $sivu = 'views/kirjautuminen.php';
-        require 'views/pohja.php';
-        ?>
+
     </body>
 </html>

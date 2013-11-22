@@ -9,22 +9,20 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        
+
         <div>
 
-            <form action="login" method="POST">Käyttäjänimi <input type="text" name="kayttajanimi">      
+            <form action="kirjaudu.php" method="POST">
+                Käyttäjänimi <input type="text" name="kayttajanimi">      
                 <br>
                 Salasana <input type="password" name="salasana">
                 <br>
                 <input type="submit" value="Submit">
             </form>
-            
-            
-            
+
+
+
         </div>
-        
-        <?php
-        // put your code here
-        ?>
+
     </body>
 </html>

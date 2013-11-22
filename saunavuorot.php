@@ -9,9 +9,8 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-
         <?php
-        $sivu = 'views/kirjautuminen.php';
+        $sivu = 'views/saunavuorot.php';
         require 'views/pohja.php';
         ?>
     </body>
