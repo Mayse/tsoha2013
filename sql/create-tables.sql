@@ -6,7 +6,7 @@ koko int
 );
 
 CREATE TABLE kayttaja(
-knimi varchar(128) PRIMARY KEY
+knimi varchar(128) PRIMARY KEY,
 salasana varchar(128) NOT NULL
 );
 

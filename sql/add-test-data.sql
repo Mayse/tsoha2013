@@ -4,7 +4,7 @@ INSERT INTO `sauna` (`snimi`, `sijainti`, `koko`) VALUES ('sauna2', 'saunakatu 5
 
 INSERT INTO `kayttaja` (`knimi`, `salasana`) VALUES ('saunoja1', 'salasana');
 insert into `kayttaja` (`knimi`, `salasana`) VALUES ('saunoja2', 'salasana');
-insert into `kayttaja` (`knimi`, `salasana`) VALUES ('saunoja3', 'salasana';
+insert into `kayttaja` (`knimi`, `salasana`) VALUES ('saunoja3', 'salasana');
 insert into `kayttaja` (`knimi`, `salasana`) VALUES ('saunoja4', 'salasana');
 
 INSERT INTO `omistaja` (`knimi`,`snimi`) VALUES ('saunoja1','sauna1');
