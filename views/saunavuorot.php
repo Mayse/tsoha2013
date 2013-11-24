@@ -9,16 +9,19 @@
 <!--        staattinen table, korvataan kannasta haettavalla listalla saunavuoroista-->
         <table border="1">
 <tr>
-<th>Header 1</th>
-<th>Header 2</th>
+<th>Sauna</th>
+<th>Aika</th>
+<th>Ilmoittautuneita</th>
 </tr>
 <tr>
 <td>row 1, cell 1</td>
 <td>row 1, cell 2</td>
+<td>row 1, cell 3</td>
 </tr>
 <tr>
 <td>row 2, cell 1</td>
 <td>row 2, cell 2</td>
+<td>row 2, cell 3</td>
 </tr>
 </table>
         

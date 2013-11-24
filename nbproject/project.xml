@@ -6,9 +6,11 @@
             <name>Saunatietokanta</name>
         </data>
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>Aika</word>
             <word>annettuknimi</word>
             <word>annettuSalasana</word>
             <word>getKayttaja</word>
+            <word>Ilmoittautuneita</word>
             <word>Kayttaja</word>
             <word>kirjaudu</word>
             <word>knimi</word>
