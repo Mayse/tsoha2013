@@ -8,6 +8,7 @@
     <body>
         <?php
         require_once '../libs/tietokanta.php';
+        $yhteys = getTietokanta();
         $sql="SELECT knimi FROM kayttaja";
         foreach ($yhteys->query($sql) as $kayttaja){
             print $kayttaja['knimi'];

@@ -8,15 +8,18 @@ and open the template in the editor.
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Saunatietokanta</title>
     </head>
-    <body>
+    <body> <div>
         <h1>Saunatietokanta</h1>
-        
-        <?php if(isset($data->virheViesti))
-     echo $data->virheViesti;
+
+        <?php if (!empty($data->virhe)): ?>
+        <div><?php echo $data->virhe; ?></div>
+        <?php endif; ?>
+
+
+            <?php require $sivu;
             ?>
         
-        <?php require $sivu; ?>
 
-
+</div>
     </body>
 </html>
