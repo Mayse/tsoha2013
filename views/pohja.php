@@ -1,7 +1,3 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,7 +6,14 @@ and open the template in the editor.
     </head>
     <body> <div>
         <h1>Saunatietokanta</h1>
+        
+        <?php
+        if (!empty($_SESSION['kirjautunut'])) {
+            ?><a href="kirjautuminen.php">Kirjaudu ulos</a><?php            
+        }?>
 
+          
+        
         <?php if (!empty($data->virhe)): ?>
         <div><?php echo $data->virhe; ?></div>
         <?php endif; ?>
