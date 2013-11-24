@@ -10,6 +10,7 @@ and open the template in the editor.
     </head>
     <body>
         
+<!--        staattinen table, korvataan kannasta haettavalla listalla saunavuoroista-->
         <table border="1">
 <tr>
 <th>Header 1</th>
