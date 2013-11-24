@@ -9,7 +9,7 @@
         
         <?php
         if (!empty($_SESSION['kirjautunut'])) {
-            ?><a href="kirjautuminen.php">Kirjaudu ulos</a><?php            
+            ?><a href="uloskirjaudu.php">Kirjaudu ulos</a><?php            
         }?>
 
           
