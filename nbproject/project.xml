@@ -10,9 +10,12 @@
             <word>annettuSalasana</word>
             <word>getKayttaja</word>
             <word>Kayttaja</word>
+            <word>kirjaudu</word>
             <word>knimi</word>
             <word>salasana</word>
+            <word>Saunatietokanta</word>
             <word>sql</word>
+            <word>ulos</word>
         </spellchecker-wordlist>
     </configuration>
 </project>

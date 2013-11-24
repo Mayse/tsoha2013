@@ -25,16 +25,15 @@ $kayttaja = $_POST["kayttajanimi"];
 
 
 /* Tarkistetaan mallilta onko parametrina saatu oikeat tunnukset */
-  if (Kayttaja::getKayttaja($kayttaja, $salasana) != null) {
-    /* Jos tunnus on oikea, ohjataan käyttäjä sopivalla HTTP-otsakkeella kissalistaan. */
-        $_SESSION['kirjautunut'] = new Kayttaja($kayttaja);
-
+if (Kayttaja::getKayttaja($kayttaja, $salasana) != null) {
+    /* Jos tunnus on oikea, lisätään istunto ja ohjataan saunalistaan */
+    $_SESSION['kirjautunut'] = new Kayttaja($kayttaja);
     header('Location: saunavuorot.php');
-  } else {
+} else {
     /* Väärän tunnuksen syöttänyt saa eteensä lomakkeen ja virheen.
      * Tässä käytetään omalta yläluokalta perittyjä yleiskäyttöisiä metodeja.
      */
     naytaNakyma("views/kirjautuminen.php", array(
-      'virhe' => "Kirjautuminen ei onnistunut. Käyttäjää ei löytynyt",
+        'virhe' => "Kirjautuminen ei onnistunut. Käyttäjää ei löytynyt",
     ));
-  }
+}

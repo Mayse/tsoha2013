@@ -1,4 +1,6 @@
 
+<!--Testaa tietokantayhteyttä tulostamalla käyttäjä taulun käyttäjänimet rivitettynä-->
+
 <!DOCTYPE html>
 <html>
     <head>

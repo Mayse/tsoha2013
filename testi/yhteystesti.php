@@ -1,3 +1,5 @@
+<!--Esimerkkien tietokantayhteystesti-->
+
 <!DOCTYPE html>
 <html>
     <head>
