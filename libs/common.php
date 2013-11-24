@@ -1,15 +1,14 @@
 <?php
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-?>
-
-<?php
-
+session_start();
 function naytaNakyma($sivu, $data = array()) {
     $data = (object) $data;
     require 'views/pohja.php';
     exit();
+}
+function onKirjautunut(){
+    if (!empty($_SESSION['kirjautunut'])) {
+        return (boolean) TRUE;
+    }
+    header("Location: kirjautuminen.php");
+    return (boolean) FALSE;
 }

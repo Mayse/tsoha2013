@@ -2,6 +2,8 @@
 
 require_once 'libs/common.php';
 require_once 'libs/tietokanta.php';
+require_once 'libs/models/kayttaja.php';
+
 
 if (empty($_POST["kayttajanimi"]) && empty($_POST["salasana"])) {
     naytaNakyma("views/kirjautuminen.php", array(
@@ -21,11 +23,12 @@ if (empty($_POST["kayttajanimi"]) && empty($_POST["salasana"])) {
 $salasana = $_POST["salasana"];
 $kayttaja = $_POST["kayttajanimi"];
 
-require_once 'libs/models/kayttaja.php';
 
 /* Tarkistetaan mallilta onko parametrina saatu oikeat tunnukset */
   if (Kayttaja::getKayttaja($kayttaja, $salasana) != null) {
     /* Jos tunnus on oikea, ohjataan käyttäjä sopivalla HTTP-otsakkeella kissalistaan. */
+        $_SESSION['kirjautunut'] = new Kayttaja($kayttaja);
+
     header('Location: saunavuorot.php');
   } else {
     /* Väärän tunnuksen syöttänyt saa eteensä lomakkeen ja virheen.
