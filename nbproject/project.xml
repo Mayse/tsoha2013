@@ -5,5 +5,14 @@
         <data xmlns="http://www.netbeans.org/ns/php-project/1">
             <name>Saunatietokanta</name>
         </data>
+        <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>annettuknimi</word>
+            <word>annettuSalasana</word>
+            <word>getKayttaja</word>
+            <word>Kayttaja</word>
+            <word>knimi</word>
+            <word>salasana</word>
+            <word>sql</word>
+        </spellchecker-wordlist>
     </configuration>
 </project>

@@ -1,6 +1,7 @@
 <?php
 
 require_once 'libs/common.php';
+require_once 'libs/tietokanta.php';
 
 if (empty($_POST["kayttajanimi"]) && empty($_POST["salasana"])) {
     naytaNakyma("views/kirjautuminen.php", array(
@@ -17,5 +18,20 @@ if (empty($_POST["kayttajanimi"]) && empty($_POST["salasana"])) {
     ;
 }
 
- $salasana = $_POST["salasana"];
- $kayttaja = $_POST["kayttajanimi"];
+$salasana = $_POST["salasana"];
+$kayttaja = $_POST["kayttajanimi"];
+
+require_once 'libs/models/kayttaja.php';
+
+/* Tarkistetaan mallilta onko parametrina saatu oikeat tunnukset */
+  if (Kayttaja::getKayttaja($kayttaja, $salasana) != null) {
+    /* Jos tunnus on oikea, ohjataan käyttäjä sopivalla HTTP-otsakkeella kissalistaan. */
+    header('Location: saunavuorot.php');
+  } else {
+    /* Väärän tunnuksen syöttänyt saa eteensä lomakkeen ja virheen.
+     * Tässä käytetään omalta yläluokalta perittyjä yleiskäyttöisiä metodeja.
+     */
+    naytaNakyma("views/kirjautuminen.php", array(
+      'virhe' => "Kirjautuminen ei onnistunut. Käyttäjää ei löytynyt",
+    ));
+  }
