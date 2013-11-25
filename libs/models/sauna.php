@@ -1,17 +1,11 @@
 <?php
-
-/**
- * Description of sauna
- *
- * @author miikas
- */
 class Sauna {
-    private $nimi;
+    private $snimi;
     private $sijainti;
     private $koko;
     
     public static function getSauna($annettunimi) {
-    $sql = "SELECT snimi, sijainti, koko from sauna where snimi = ? AND sijainti = ? AND ?";
+    $sql = "SELECT snimi, sijainti, koko from sauna where snimi = ? AND sijainti = ? AND koko = ?";
     $kysely = getTietokanta()->prepare($sql);
     $kysely->execute(array($annettunimi));
 
@@ -28,5 +22,5 @@ class Sauna {
       return $sauna;
     }
   }
-    //put your code here
+   
 }

@@ -22,6 +22,10 @@ class Kayttaja {
       return $kayttaja;
     }
   }
+  
+  public function getNimi(){
+      return $this->knimi;
+  }
 
   /* Tähän muita Käyttäjäluokan metodeita */
 }
