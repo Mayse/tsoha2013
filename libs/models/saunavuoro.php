@@ -28,7 +28,7 @@ class saunavuoro {
 
 //palauttaa vuorot jotka eivät ole vielä päättyneet
     public static function getSaunavuorot() {
-        $sql = "select ID, snimi, alkuaika, loppuaika from saunavuoro where loppuaika>now()";
+        $sql = "select ID, snimi, alkuaika, loppuaika from saunavuoro where loppuaika>now() order by alkuaika";
         $kysely = getTietokanta()->prepare($sql);
         $kysely->execute();
 
@@ -60,4 +60,8 @@ class saunavuoro {
         return $this->ID;
     }
 
+    public function getOsallistujia() {
+//        toteuttamatta
+        return "palauttaa osallistujamäärän";
+    }
 }

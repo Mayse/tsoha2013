@@ -16,7 +16,7 @@
          
   ?><td> <?php       echo $vuoro->getNimi(); ?></td> <?php
   ?><td> <?php       echo $vuoro->getAlkuaika(); echo " - "; echo $vuoro->getLoppuaika();?></td> <?php
-  ?><td> <?php       echo "osallistujamääräkysely";?></td> <?php
+  ?><td> <?php       echo $vuoro->getOsallistujia();?></td> <?php
          ?></tr>
          <?php
 //         var_dump($vuoro);
