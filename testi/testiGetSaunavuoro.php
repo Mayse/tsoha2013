@@ -7,4 +7,4 @@ $ID = "2";
 $vuoro = saunavuoro::getSaunavuoro($ID);
  var_dump($vuoro);
    
- $nimi = 
+ $nimi = $vuoro->getNimi();
