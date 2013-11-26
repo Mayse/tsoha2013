@@ -2,12 +2,13 @@
 
 class saunavuoro {
 
-    private $nimi;
+    private $snimi;
     private $alkuaika;
     private $loppuaika;
+    private $ID;
 
     public static function getSaunavuoro($ID) {
-        $sql = "SELECT ID, snimi, alkuaika, loppuaika from sauna where ID = ?";
+        $sql = "SELECT ID, snimi, alkuaika, loppuaika from saunavuoro where ID = ?";
         $kysely = getTietokanta()->prepare($sql);
         $kysely->execute(array($ID));
 
@@ -15,7 +16,7 @@ class saunavuoro {
         if ($tulos == null) {
             return null;
         } else {
-            $sauna = new Sauna();
+            $sauna = new saunavuoro();
             /* Käytetään PHP:n vapaamielistä muuttujamallia olion
               kenttien asettamiseen */
             foreach ($tulos as $kentta => $arvo) {
@@ -25,18 +26,38 @@ class saunavuoro {
         }
     }
 
-    //palauttaa vain vuorojen ID:t jotka eivät ole vielä päättyneet
+//palauttaa vuorot jotka eivät ole vielä päättyneet
     public static function getSaunavuorot() {
-        $sql = "select id from saunavuoro where loppuaika<now()";
+        $sql = "select ID, snimi, alkuaika, loppuaika from saunavuoro where loppuaika>now()";
         $kysely = getTietokanta()->prepare($sql);
         $kysely->execute();
 
-        $tulos = $kysely->fetchObject();
-        if ($tulos == NULL) {
-            return NULL;
-        }   else {
-            return $tulos;
+        $tulokset = array();
+
+        foreach ($kysely->fetchAll() as $tulos) {
+            $vuoro = new saunavuoro();
+            foreach ($tulos as $kentta => $arvo) {
+                $vuoro->$kentta = $arvo;
+            }
+            $tulokset[] = $vuoro;
         }
+        return $tulokset;
+    }
+
+    public function getNimi() {
+        return $this->snimi;
+    }
+
+    public function getAlkuaika() {
+        return $this->alkuaika;
+    }
+
+    public function getLoppuaika() {
+        return $this->loppuaika;
+    }
+
+    public function getID() {
+        return $this->ID;
     }
 
 }
