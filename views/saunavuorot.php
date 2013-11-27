@@ -12,11 +12,11 @@
             foreach ($vuorot as $vuoro) {
                 ?><tr>
                     <?php
-                    $ilmoittautujamaara = ilmoittautuminen::getIlmoittautujamaara($vuoro->getID());
+                    $ilmoittautujamaara = ilmoittautuminen::getIlmoittautujamaara($vuoro->getId());
                     $koko = Sauna::getSauna($vuoro->getNimi())->getKoko();
                     ?>
 
-                    <td> <a href="ilmoittautuminen.php?id=<?php echo $vuoro->getID(); ?>"><?php echo $vuoro->getNimi(); ?></a> </td> <?php
+                    <td> <a href="ilmoittautuminen.php?id=<?php echo $vuoro->getId(); ?>"><?php echo $vuoro->getNimi(); ?></a> </td> <?php
                     ?><td> <?php
                     echo $vuoro->getAlkuaika();
                     echo " - ";

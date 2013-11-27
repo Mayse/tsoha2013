@@ -4,7 +4,7 @@ class ilmoittautuminen {
     //put your code here
     
     public static function getIlmoittautujamaara($id){
-        $sql = "select count(knimi) from ilmoittautuminen where id = ?";
+        $sql = "select count(knimi) from ilmoittautuminen where ID = ?";
         $kysely = getTietokanta()->prepare($sql);
         $kysely->execute(array($id));
         $tulos = $kysely->fetchColumn();
@@ -12,7 +12,7 @@ class ilmoittautuminen {
     }
 
     public static function getIlmoittautuneet($id) {
-        $sql = "select knimi from ilmoittautuminen where id = ?";
+        $sql = "select knimi from ilmoittautuminen where ID = ?";
         $kysely = getTietokanta()->prepare($sql);
         $kysely->execute(array($id));
         $tulos = $kysely->fetchAll();
@@ -25,6 +25,12 @@ class ilmoittautuminen {
     }
     
     public static function setIlmoittautuminen($knimi,$id){
+        
+        
+        $sql = "insert into ilmoittautuminen(ID,knimi) values (?,?)";
+        $kysely = getTietokanta()->prepare($sql);
+        $kysely->execute();
+        return true;
         
         return false;
     }

@@ -5,7 +5,7 @@ class saunavuoro {
     private $snimi;
     private $alkuaika;
     private $loppuaika;
-    private $id;
+    private $ID;
 
     public static function getSaunavuoro($id) {
         $sql = "SELECT ID, snimi, alkuaika, loppuaika from saunavuoro where ID = ?";
@@ -57,7 +57,7 @@ class saunavuoro {
     }
 
     public function getId() {
-        return $this->id;
+        return $this->ID;
     }
 
     public function getOsallistujia() {
