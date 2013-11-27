@@ -5,7 +5,7 @@ class Sauna {
     private $koko;
     
     public static function getSauna($annettunimi) {
-    $sql = "SELECT snimi, sijainti, koko from sauna where snimi = ? AND sijainti = ? AND koko = ?";
+    $sql = "SELECT snimi, sijainti, koko from sauna where snimi = ?";
     $kysely = getTietokanta()->prepare($sql);
     $kysely->execute(array($annettunimi));
 
@@ -22,5 +22,19 @@ class Sauna {
       return $sauna;
     }
   }
+  
+  public function getNimi() {
+      return $this->snimi;
+  }
+
+  public function getSijainti() {
+      return $this->sijainti;
+  }
+
+  public function getKoko() {
+      return $this->koko;
+  }
+
+
    
 }

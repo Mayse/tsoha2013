@@ -13,13 +13,15 @@
     foreach ($vuorot as $vuoro) {
         ?><tr>
          <?php
-         
+//         $nimi = $vuoro->getNimi();
+//         $sauna = Sauna::getSauna($nimi);
+//         $koko = $sauna->getKoko();
+         $koko = Sauna::getSauna($vuoro->getNimi())->getKoko();
   ?><td> <?php       echo $vuoro->getNimi(); ?></td> <?php
   ?><td> <?php       echo $vuoro->getAlkuaika(); echo " - "; echo $vuoro->getLoppuaika();?></td> <?php
-  ?><td> <?php       echo $vuoro->getOsallistujia();?></td> <?php
+  ?><td> <?php       echo ilmoittautuminen::getIlmoittautujamaara($vuoro->getID()); echo "/"; echo $koko; ?></td> <?php
          ?></tr>
          <?php
-//         var_dump($vuoro);
     } ?>
     
     
