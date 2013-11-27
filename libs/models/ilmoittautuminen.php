@@ -10,5 +10,18 @@ class ilmoittautuminen {
         $tulos = $kysely->fetchColumn();
         return $tulos;
     }
-    
+
+    public static function getIlmoittautuneet($id) {
+        $sql = "select knimi from ilmoittautuminen where id = ?";
+        $kysely = getTietokanta()->prepare($sql);
+        $kysely->execute(array($id));
+        $tulos = $kysely->fetchAll();
+        
+        foreach ($tulos as $ilmoittautunut) {
+            $ilmoittautuneet[]=$ilmoittautunut["knimi"];
+        }
+        
+        return $ilmoittautuneet;
+    }
+
 }
