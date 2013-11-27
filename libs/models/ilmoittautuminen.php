@@ -23,5 +23,10 @@ class ilmoittautuminen {
         
         return $ilmoittautuneet;
     }
+    
+    public static function setIlmoittautuminen($knimi,$id){
+        
+        return false;
+    }
 
 }

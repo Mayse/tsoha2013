@@ -5,12 +5,12 @@ class saunavuoro {
     private $snimi;
     private $alkuaika;
     private $loppuaika;
-    private $ID;
+    private $id;
 
-    public static function getSaunavuoro($ID) {
+    public static function getSaunavuoro($id) {
         $sql = "SELECT ID, snimi, alkuaika, loppuaika from saunavuoro where ID = ?";
         $kysely = getTietokanta()->prepare($sql);
-        $kysely->execute(array($ID));
+        $kysely->execute(array($id));
 
         $tulos = $kysely->fetchObject();
         if ($tulos == null) {
@@ -56,8 +56,8 @@ class saunavuoro {
         return $this->loppuaika;
     }
 
-    public function getID() {
-        return $this->ID;
+    public function getId() {
+        return $this->id;
     }
 
     public function getOsallistujia() {

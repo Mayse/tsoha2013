@@ -7,7 +7,7 @@ $vuorot = saunavuoro::getSaunavuorot();
 var_dump($vuorot);
 ?><br>
 //<?php
-//$ID = "2";
-//$vuoro = saunavuoro::getSaunavuoro($ID);
+//$id = "2";
+//$vuoro = saunavuoro::getSaunavuoro($id);
 // var_dump($vuoro);
    

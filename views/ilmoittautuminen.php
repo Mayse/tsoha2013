@@ -7,18 +7,16 @@
     <body>
         <table border="1">
             <th>Ilmoittautuneet</th>
-        <?php
-        foreach ($ilmoittautuneet as $ilmoittautunut) {
-            
-       ?><tr><td><?php echo $ilmoittautunut; ?></td></tr><?php 
-        }
-        // put your code here
-        ?>
+            <?php
+            foreach ($ilmoittautuneet as $ilmoittautunut) {
+                ?><tr><td><?php echo $ilmoittautunut; ?></td></tr><?php
+                }
+                ?>
         </table>
         <div>
             <form action="ilmoittaudu.php" method='post'>
                 <input type="hidden" value="<?php echo $id; ?>" />
-            <button type="submit">Ilmoittaudu/peru ilmoittautuminen</button>
+                <button type="submit">Ilmoittaudu/peru ilmoittautuminen</button>
             </form>
         </div>
     </body>
