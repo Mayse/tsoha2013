@@ -34,6 +34,6 @@ if (Kayttaja::getKayttaja($kayttaja, $salasana) != null) {
      * Tässä käytetään omalta yläluokalta perittyjä yleiskäyttöisiä metodeja.
      */
     naytaNakyma("views/kirjautuminen.php", array(
-        'virhe' => "Kirjautuminen ei onnistunut. Käyttäjää ei löytynyt",
+        'virhe' => "Kirjautuminen ei onnistunut. Käyttäjänimi tai salasana väärin",
     ));
 }

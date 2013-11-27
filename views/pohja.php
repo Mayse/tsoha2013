@@ -4,12 +4,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Saunatietokanta</title>
     </head>
-    <body> <div>
+    <body> <div align=center>
         <h1>Saunatietokanta</h1>
         
         <?php
         if (!empty($_SESSION['kirjautunut'])) {
-            ?><a href="uloskirjaudu.php">Kirjaudu ulos</a><?php            
+            ?><div align = right><a href="uloskirjaudu.php">Kirjaudu ulos</a></div><?php            
         }?>
 
           

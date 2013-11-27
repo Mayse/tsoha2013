@@ -15,5 +15,11 @@
         // put your code here
         ?>
         </table>
+        <div>
+            <form action="ilmoittaudu.php" method='post'>
+                <input type="hidden" value="<?php echo $id; ?>" />
+            <button type="submit">Ilmoittaudu/peru ilmoittautuminen</button>
+            </form>
+        </div>
     </body>
 </html>
