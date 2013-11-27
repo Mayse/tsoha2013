@@ -1,4 +1,5 @@
 <?php
+require_once 'models/kayttaja.php';
 session_start();
 
 function naytaNakyma($sivu, $data = array()) {

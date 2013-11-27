@@ -25,11 +25,10 @@ class ilmoittautuminen {
     }
     
     public static function setIlmoittautuminen($knimi,$id){
-        
-        
+                
         $sql = "insert into ilmoittautuminen(ID,knimi) values (?,?)";
         $kysely = getTietokanta()->prepare($sql);
-        $kysely->execute();
+        $kysely->execute(array($id,$knimi));
         return true;
         
         return false;

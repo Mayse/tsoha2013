@@ -4,6 +4,8 @@ class Kayttaja {
   private $knimi;
   private $salasana;
   
+  
+  
   public static function getKayttaja($annettuknimi, $annettuSalasana) {
     $sql = "SELECT knimi, salasana from kayttaja where knimi = ? AND salasana = ?";
     $kysely = getTietokanta()->prepare($sql);

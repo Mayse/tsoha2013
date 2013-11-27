@@ -3,11 +3,13 @@ require_once 'libs/common.php';
 require_once 'libs/tietokanta.php';
 require_once 'libs/models/ilmoittautuminen.php';
 
+//var_dump($_SESSION);
 $id = $_POST["id"];
-$kayttaja = $_SESSION['kirjautunut'];
-$knimi = $kayttaja->getNimi();
-var_dump($knimi);
-
+$knimi = $_SESSION['kirjautunut']->getNimi();
+//$knimi = $kayttaja->getNimi();
+//var_dump($kayttaja);
+ilmoittautuminen::setIlmoittautuminen($knimi, $id);
+echo 'ok';
 
 
 

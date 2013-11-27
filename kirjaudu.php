@@ -21,13 +21,14 @@ if (empty($_POST["kayttajanimi"]) && empty($_POST["salasana"])) {
 }
 
 $salasana = $_POST["salasana"];
-$kayttaja = $_POST["kayttajanimi"];
+$kayttajanimi = $_POST["kayttajanimi"];
+$kayttaja = Kayttaja::getKayttaja($kayttajanimi, $salasana);
 
 
 /* Tarkistetaan mallilta onko parametrina saatu oikeat tunnukset */
-if (Kayttaja::getKayttaja($kayttaja, $salasana) != null) {
+if ($kayttaja != null) {
     /* Jos tunnus on oikea, lisätään istunto ja ohjataan saunalistaan */
-    $_SESSION['kirjautunut'] = new Kayttaja($kayttaja);
+    $_SESSION['kirjautunut'] = $kayttaja;
     header('Location: saunavuorot.php');
 } else {
     /* Väärän tunnuksen syöttänyt saa eteensä lomakkeen ja virheen.
