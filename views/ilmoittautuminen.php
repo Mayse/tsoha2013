@@ -10,7 +10,7 @@
         <?php echo "alkaa: " . $alkuaika; ?><br>
         <?php echo "loppuu: " . $loppuaika; ?><br>
 
-        <div>
+        <div>    
             <table border="1">
                 <th>Ilmoittautuneet</th>
                 <?php
@@ -18,19 +18,14 @@
                     ?><tr><td><?php echo $ilmoittautunut; ?></td></tr><?php
                     }
                     ?>
-            </table></div>
-        <div>
-            
-            
-            <?php  
+            </table></div><?php  
                 
-     if (ilmoittautuminen::tarkistaIlmoittautuminen($_SESSION['kirjautunut']->getNimi(), $id)) {
+     if (ilmoittautuminen::tarkistaIlmoittautuminen($knimi, $id)) {
         ?> <form action="ilmoittaudu.php" method='post'>
                 <input type="hidden" name="id" value="<?php echo $id; ?>" >
                 <input type="hidden" name="suunta" value="ulos" >
                 <button type="submit">Peru ilmoittautuminen</button>
-                </form>
-        <?php    
+                </form><?php    
      }
      elseif (!$taynna) {
  
@@ -42,12 +37,8 @@
                 <input type="hidden" name="id" value="<?php echo $id; ?>" >
                 <input type="hidden" name="suunta" value="sisaan">
                 <button type="submit">Ilmoittaudu</button>
-                </form>
-            
- <?php } if($taynna) {echo "sauna täynnä";
+                </form><?php } if($taynna) {echo "sauna täynnä";
                     }?>
-
-        </div>
-        <a href="saunavuorot.php" >palaa</a>
+        <div align="right"><a href="saunavuorot.php" >palaa</a></div>
     </body>
 </html>

@@ -25,6 +25,12 @@ class saunavuoro {
             return $sauna;
         }
     }
+    
+    public static function setSaunavuoro($snimi,$alkuaika,$loppuaika){
+        $sql = "insert into saunavuoro(snimi,alkuaika,loppuaika) values (?,?,?)";
+        $kysely = getTietokanta()->prepare($sql);
+        $kysely->execute();
+    }
 
 //palauttaa vuorot jotka eivät ole vielä päättyneet
     public static function getSaunavuorot() {

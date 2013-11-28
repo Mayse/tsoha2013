@@ -2,6 +2,11 @@
 require_once 'models/kayttaja.php';
 session_start();
 
+//kirjautuneen käyttäjän nimi
+function getKnimi(){
+    return $knimi = $_SESSION['kirjautunut']->getNimi();
+}
+
 function naytaNakyma($sivu, $data = array()) {
     $data = (object) $data;
     require 'views/pohja.php';

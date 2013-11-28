@@ -7,6 +7,7 @@
         </data>
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
             <word>Aika</word>
+            <word>Alkamisaika</word>
             <word>annettuknimi</word>
             <word>annettuSalasana</word>
             <word>getKayttaja</word>
@@ -17,11 +18,14 @@
             <word>Kayttaja</word>
             <word>kirjaudu</word>
             <word>knimi</word>
+            <word>Loppumisaika</word>
             <word>palaa</word>
             <word>salasana</word>
             <word>Saunatietokanta</word>
             <word>sql</word>
             <word>ulos</word>
+            <word>uusi</word>
+            <word>vuoro</word>
         </spellchecker-wordlist>
     </configuration>
 </project>

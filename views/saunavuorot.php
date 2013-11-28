@@ -4,7 +4,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title></title>
     </head>
-    <body><table border="1"><tr>
+    <body><?php
+        if (omistaja::omistaakoSaunan($knimi)) {
+            ?><a href="luovuoro.php">uusi vuoro</a><?php
+        }
+        ?>
+
+        <table border="1"><tr>
                 <th>Sauna</th>
                 <th>Aika</th>
                 <th>Ilmoittautuneita</th>
@@ -18,18 +24,18 @@
 
                     <td> <a href="ilmoittautuminen.php?id=<?php echo $vuoro->getId(); ?>"><?php echo $vuoro->getNimi(); ?></a> </td> <?php
                     ?><td> <?php
-                    echo $vuoro->getAlkuaika();
-                    echo " - ";
-                    echo $vuoro->getLoppuaika();
-                    ?></td> <?php
-                    ?><td> <?php
+                        echo $vuoro->getAlkuaika();
+                        echo " - ";
+                        echo $vuoro->getLoppuaika();
+                        ?></td> <?php
+                        ?><td> <?php
                         echo $ilmoittautujamaara;
                         echo "/";
                         echo $koko;
                         ?></td> <?php
                         ?></tr>
-<?php }
-?>
+            <?php }
+            ?>
 
 
 
