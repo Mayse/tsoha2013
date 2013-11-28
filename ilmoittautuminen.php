@@ -9,7 +9,8 @@ onKirjautunut();
 
 
 $id = $_GET["id"];
-
+$snimi = saunavuoro::getSaunavuoro($id)->getNimi();
+$sijainti = Sauna::getSauna($snimi)->getSijainti();
 
 //$id = "1"; //staattinen placeholder
 $ilmoittautuneet = ilmoittautuminen::getIlmoittautuneet($id);

@@ -9,8 +9,11 @@ $knimi = $_SESSION['kirjautunut']->getNimi();
 //$knimi = $kayttaja->getNimi();
 //var_dump($kayttaja);
 ilmoittautuminen::setIlmoittautuminen($knimi, $id);
-echo 'ok';
+$paluu = "ilmoittautuminen.php?id=" . $id;
+header("Location: $paluu");
+//var_dump($paluu);
+//echo 'ok';
 
 
 
-?>
+
