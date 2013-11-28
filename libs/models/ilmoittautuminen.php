@@ -1,9 +1,10 @@
 <?php
 
 class ilmoittautuminen {
+
     //put your code here
-    
-    public static function getIlmoittautujamaara($id){
+
+    public static function getIlmoittautujamaara($id) {
         $sql = "select count(knimi) from ilmoittautuminen where ID = ?";
         $kysely = getTietokanta()->prepare($sql);
         $kysely->execute(array($id));
@@ -16,22 +17,34 @@ class ilmoittautuminen {
         $kysely = getTietokanta()->prepare($sql);
         $kysely->execute(array($id));
         $tulos = $kysely->fetchAll();
-        
+
         foreach ($tulos as $ilmoittautunut) {
-            $ilmoittautuneet[]=$ilmoittautunut["knimi"];
+            $ilmoittautuneet[] = $ilmoittautunut["knimi"];
         }
-        
+
         return $ilmoittautuneet;
     }
     
-    public static function setIlmoittautuminen($knimi,$id){
-                
-        $sql = "insert into ilmoittautuminen(ID,knimi) values (?,?)";
+    public static function tarkistaIlmoittautuminen($knimi, $id){
+        $sql = "select knimi from ilmoittautuminen where knimi=? and id=?";
         $kysely = getTietokanta()->prepare($sql);
-        $kysely->execute(array($id,$knimi));
-        return true;
+        $kysely->execute(array($knimi, $id));
+        $tulos = $kysely->fetchObject();
+        if ($tulos != null) {
+        return TRUE;}
         
-        return false;
+        return FALSE;
     }
 
-}
+    public static function setIlmoittautuminen($knimi, $id) {
+
+        if (ilmoittautuminen::tarkistaIlmoittautuminen($knimi,$id)) {
+            return false;
+        }
+            $sql = "insert into ilmoittautuminen(ID,knimi) values (?,?)";
+            $kysely = getTietokanta()->prepare($sql);
+            $kysely->execute(array($id, $knimi));
+            return true;
+        }
+    }
+    
