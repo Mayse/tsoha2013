@@ -7,6 +7,8 @@
     <body>
         <?php echo $snimi; ?><br>
         <?php echo $sijainti; ?><br>
+        <?php echo "alkaa: " . $alkuaika; ?><br>
+        <?php echo "loppuu: " . $loppuaika; ?><br>
 
         <div>
             <table border="1">
@@ -18,7 +20,9 @@
                     ?>
             </table></div>
         <div>
-            <?php if (!saunavuoro::onkoTaynna($id)) { 
+            
+            
+            <?php  
                 
      if (ilmoittautuminen::tarkistaIlmoittautuminen($_SESSION['kirjautunut']->getNimi(), $id)) {
         ?> <form action="ilmoittaudu.php" method='post'>
@@ -28,7 +32,8 @@
                 </form>
         <?php    
      }
- else {
+     elseif (!$taynna) {
+ 
                 ?>
             
             
@@ -39,7 +44,7 @@
                 <button type="submit">Ilmoittaudu</button>
                 </form>
             
- <?php }} else {echo "sauna täynnä";
+ <?php } if($taynna) {echo "sauna täynnä";
                     }?>
 
         </div>
