@@ -11,6 +11,7 @@ onKirjautunut();
 $id = $_GET["id"];
 $vuoro = saunavuoro::getSaunavuoro($id);
 $snimi = $vuoro->getNimi();
+$knimi = getKnimi();
 $alkuaika = $vuoro->getAlkuaika();
 $loppuaika = $vuoro->getLoppuaika();
 $sijainti = Sauna::getSauna($snimi)->getSijainti();
