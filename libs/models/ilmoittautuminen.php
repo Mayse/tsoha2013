@@ -46,5 +46,18 @@ class ilmoittautuminen {
             $kysely->execute(array($id, $knimi));
             return true;
         }
+
+    public static function deleteIlmoittautuminen($knimi, $id) {
+        if (ilmoittautuminen::tarkistaIlmoittautuminen($knimi,$id)) { 
+            $sql = "delete from ilmoittautuminen where ID=? and knimi=?";
+            $kysely = getTietokanta()->prepare($sql);
+            $kysely->execute(array($id, $knimi));
+            return TRUE;
+        }
+            
+            return false;
+        }
     }
+
+
     

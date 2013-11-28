@@ -43,6 +43,16 @@ class saunavuoro {
         }
         return $tulokset;
     }
+    
+    public static function onkoTaynna($id){
+        $ilmoittautujamaara = ilmoittautuminen::getIlmoittautujamaara($id);
+        $koko = sauna::getSauna(saunavuoro::getSaunavuoro($id)->getNimi())->getKoko(); //send halp!
+        if ($ilmoittautujamaara>=$koko) {
+            return TRUE;
+        }
+        return FALSE;
+        
+    }
 
     public function getNimi() {
         return $this->snimi;
