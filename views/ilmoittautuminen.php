@@ -28,11 +28,7 @@
                 </form><?php    
      }
      elseif (!$taynna) {
- 
-                ?>
-            
-            
-                
+                ?>               
                 <form action="ilmoittaudu.php" method='post'>
                 <input type="hidden" name="id" value="<?php echo $id; ?>" >
                 <input type="hidden" name="suunta" value="sisaan">

@@ -19,9 +19,12 @@ function naytaNakyma($sivu, $data = array()) {
 function onKirjautunut(){
     if (!empty($_SESSION['kirjautunut'])) {
         return (boolean) TRUE;
+
     }
+    
     header("Location: kirjautuminen.php");
-    return (boolean) FALSE;
+    exit();
+    
 }
 
 function kirjaaUlos(){

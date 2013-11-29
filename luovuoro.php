@@ -2,6 +2,7 @@
 require_once 'libs/common.php';
 require_once 'libs/tietokanta.php';
 require_once 'libs/models/omistaja.php';
+require_once 'libs/models/saunavuoro.php';
 
 onKirjautunut();
 
@@ -16,5 +17,5 @@ if (isset($_POST['sauna']) && isset($_POST['alkuaika']) && isset($_POST['loppuai
     $alkuaika = $_POST['alkuaika'];
     $loppuaika = $_POST['loppuaika'];
     saunavuoro::setSaunavuoro($snimi, $alkuaika, $loppuaika);
-    echo    "vuoro yritetty lisätä";
+    header("Location: saunavuorot.php");
 }
