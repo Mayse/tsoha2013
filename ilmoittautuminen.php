@@ -4,6 +4,7 @@ require_once 'libs/models/saunavuoro.php';
 require_once 'libs/models/sauna.php';
 require_once 'libs/models/ilmoittautuminen.php';
 require_once 'libs/tietokanta.php';
+require_once 'libs/models/omistaja.php';
 
 onKirjautunut();
 

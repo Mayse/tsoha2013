@@ -1,12 +1,23 @@
 <?php
 
 class omistaja {
-    //put your code here
     
-    public static function omistaakoSaunan($knimi){
+    
+    public static function omistaakoSaunoja($knimi){
         $sql = "select * from omistaja where knimi=?";
         $kysely = getTietokanta()->prepare($sql);
         $kysely->execute(array($knimi));
+        $tulos = $kysely->fetchObject();
+        if ($tulos==NULL) {
+            return false;
+        }
+        return true;
+    }
+    
+    public static function omistaakoSaunan($knimi,$snimi){
+        $sql = "select * from omistaja where knimi=? and snimi=?";
+        $kysely = getTietokanta()->prepare($sql);
+        $kysely->execute(array($knimi,$snimi));
         $tulos = $kysely->fetchObject();
         if ($tulos==NULL) {
             return false;
