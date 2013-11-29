@@ -19,7 +19,7 @@
                     }
                     ?>
             </table></div><?php  
-                
+                //jos käyttäjä on ilmoittautunut vuoroon, näytetään perumisnappi
      if (ilmoittautuminen::tarkistaIlmoittautuminen($knimi, $id)) {
         ?> <form action="ilmoittaudu.php" method='post'>
                 <input type="hidden" name="id" value="<?php echo $id; ?>" >
@@ -27,18 +27,25 @@
                 <button type="submit">Peru ilmoittautuminen</button>
                 </form><?php    
      }
+                //muuten näytetään ilmoittautumisnappi, jos vuoro ei ole vielä täynnä
      elseif (!$taynna) {
  
-                ?>
-            
-            
-                
+                ?>    
                 <form action="ilmoittaudu.php" method='post'>
                 <input type="hidden" name="id" value="<?php echo $id; ?>" >
                 <input type="hidden" name="suunta" value="sisaan">
                 <button type="submit">Ilmoittaudu</button>
-                </form><?php } if($taynna) {echo "sauna täynnä";
-                    }?>
+                </form><?php } 
+                //täydestä saunasta ilmoitetaan tekstirivillä
+                if($taynna) {echo "sauna täynnä";
+                    }?> <br><?php
+            if (omistaja::omistaakoSaunan($knimi, $snimi)) {?>
+                <form action="muokkaavuoroa.php" method='post'>
+                <input type="hidden" name="id" value="<?php echo $id; ?>" >
+                <button type="submit">Muokkaa vuoroa</button>
+                </form><?php
+            }   
+                    ?>
         <div align="right"><a href="saunavuorot.php" >palaa</a></div>
     </body>
 </html>

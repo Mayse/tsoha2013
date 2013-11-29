@@ -5,7 +5,7 @@
         <title></title>
     </head>
     <body><?php
-        if (omistaja::omistaakoSaunan($knimi)) {
+        if (omistaja::omistaakoSaunoja($knimi)) {
             ?><a href="luovuoro.php">uusi vuoro</a><?php
         }
         ?>
