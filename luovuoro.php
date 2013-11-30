@@ -12,10 +12,16 @@ $saunat = omistaja::getOmistetut($knimi);
 $sivu = "views/luovuoro.php";
 require "views/pohja.php";
 
-if (isset($_POST['sauna']) && isset($_POST['alkuaika']) && isset($_POST['loppuaika'])) {
+if (isset($_POST['sauna']) && isset($_POST['alkupaiva']) && isset($_POST['alkukello']) && isset($_POST['loppupaiva']) && isset($_POST['loppukello'])) {
     $snimi = $_POST['sauna'];
-    $alkuaika = $_POST['alkuaika'];
-    $loppuaika = $_POST['loppuaika'];
+    $alkupaiva = $_POST['alkupaiva'];
+    $alkukello = $_POST['alkukello'];
+    $alkuaika = $alkupaiva . " " . $alkukello;
+    $loppupaiva = $_POST['loppupaiva'];
+    $loppukello = $_POST['loppukello'];
+    $loppuaika = $loppupaiva . " " . $loppukello;
+
     saunavuoro::setSaunavuoro($snimi, $alkuaika, $loppuaika);
     header("Location: saunavuorot.php");
+    var_dump($alkuaika);
 }
