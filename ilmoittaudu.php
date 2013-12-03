@@ -5,6 +5,7 @@ require_once 'libs/models/ilmoittautuminen.php';
 require_once 'libs/models/saunavuoro.php';
 require_once 'libs/models/sauna.php';
 
+onKirjautunut();
 
 //var_dump($_SESSION);
 $id = $_POST["id"];
