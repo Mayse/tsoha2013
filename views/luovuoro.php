@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title></title>
     </head>
-    <body><form method="post"><?php
+    <body><form method="post"><div>päivämäärät muodossa YYYY-MM-DD kellonajat HH:MM</div><br><?php
     
     foreach ($saunat as $sauna){
     ?>
