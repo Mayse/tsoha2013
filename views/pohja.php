@@ -9,7 +9,10 @@
         
         <?php
         if (!empty($_SESSION['kirjautunut'])) {
-            ?><div align = right><a href="uloskirjaudu.php">Kirjaudu ulos</a></div><?php            
+            ?><div align = right><a href="uloskirjaudu.php">Kirjaudu ulos</a></div><?php         
+                if ($_SESSION['kirjautunut']->getPaakayttaja()) {
+                                ?><div align = right><a href="hallinta.php">Hallinta</a></div><?php         
+                }
         }?>
 
           

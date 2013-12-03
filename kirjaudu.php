@@ -28,7 +28,7 @@ $kayttaja = Kayttaja::getKayttaja($kayttajanimi, $salasana);
 /* Tarkistetaan mallilta onko parametrina saatu oikeat tunnukset */
 if ($kayttaja != null) {
     /* Jos tunnus on oikea, lisätään istunto ja ohjataan saunalistaan */
-    $_SESSION['kirjautunut'] = $kayttaja;
+    $_SESSION['kirjautunut'] = $kayttaja;    
     header('Location: saunavuorot.php');
 } else {
     /* Väärän tunnuksen syöttänyt saa eteensä lomakkeen ja virheen.

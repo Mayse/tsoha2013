@@ -27,6 +27,17 @@ function onKirjautunut(){
     
 }
 
+function onPaakayttaja(){
+    if ($_SESSION['kirjautunut']->getPaakayttaja()){
+        return (boolean) TRUE;
+        
+    }
+    
+    header("Location: saunavuorot.php");
+    exit();
+    
+}
+
 function kirjaaUlos(){
       unset($_SESSION['kirjautunut']);
 
