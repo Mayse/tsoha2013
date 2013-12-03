@@ -2,13 +2,16 @@
 require_once 'libs/common.php';
 require_once 'libs/tietokanta.php';
 require_once 'libs/models/ilmoittautuminen.php';
+require_once 'libs/models/saunavuoro.php';
+require_once 'libs/models/sauna.php';
+
 
 //var_dump($_SESSION);
 $id = $_POST["id"];
 $knimi = $_SESSION['kirjautunut']->getNimi();
 $suunta = $_POST["suunta"];
 
-if ($suunta=="sisaan") {
+if ($suunta=="sisaan" && !saunavuoro::onkoTaynna($id)) {
 
 ilmoittautuminen::setIlmoittautuminen($knimi, $id);
 }
