@@ -7,7 +7,8 @@ koko int
 
 CREATE TABLE kayttaja(
 knimi varchar(128) PRIMARY KEY,
-salasana varchar(128) NOT NULL
+salasana varchar(128) NOT NULL,
+paakayttaja tinyint(1)
 );
 
 CREATE TABLE omistaja(
