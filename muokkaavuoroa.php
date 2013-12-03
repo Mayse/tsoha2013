@@ -6,12 +6,8 @@ require_once 'libs/models/saunavuoro.php';
 onKirjautunut();
 
 if (!empty($_GET["action"]) && $_GET["action"]=="update") {
-    $alkupaiva = $_POST['alkupaiva'];
-    $alkukello = $_POST['alkukello'];
-    $alkuaika = $alkupaiva . " " . $alkukello;
-    $loppupaiva = $_POST['loppupaiva'];
-    $loppukello = $_POST['loppukello'];
-    $loppuaika = $loppupaiva . " " . $loppukello;
+    $alkuaika = $_GET["alkamisaika"];
+    $loppuaika = $_GET["loppumisaika"];
     $id = $_GET["id"];
     saunavuoro::updateSaunavuoro($id,$alkuaika,$loppuaika);
 }

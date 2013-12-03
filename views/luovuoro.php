@@ -10,9 +10,9 @@
     ?>
             <input type="radio" name="sauna" value="<?php echo $sauna['snimi'] ?>"><?php echo $sauna['snimi'] ?><br>
         <?php  } ?>
-            Alkamispäivä: <input type="date" name="alkupaiva">
+            Alkamispäivä: <input type="date" name="alkupaiva"><br>
             Alkamisaika <input type="time" name="alkukello"><br>
-            Loppumipäivä: <input type="date" name="loppupaiva">
+            Loppumisaika: <input type="date" name="loppupaiva"><br>
             Loppumisaika: <input type="time" name="loppukello"><br>
             <input type="submit" value="Submit">
 </form>
