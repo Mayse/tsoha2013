@@ -3,11 +3,15 @@ class Kayttaja {
   
   private $knimi;
   private $salasana;
-  
-  
-  
+  private $paakayttaja;
+
+
+
+
+
+
   public static function getKayttaja($annettuknimi, $annettuSalasana) {
-    $sql = "SELECT knimi, salasana from kayttaja where knimi = ? AND salasana = ?";
+    $sql = "SELECT knimi, salasana, paakayttaja from kayttaja where knimi = ? AND salasana = ?";
     $kysely = getTietokanta()->prepare($sql);
     $kysely->execute(array($annettuknimi, $annettuSalasana));
 
@@ -28,6 +32,9 @@ class Kayttaja {
   public function getNimi(){
       return $this->knimi;
   }
-
-  /* Tähän muita Käyttäjäluokan metodeita */
+  
+  //returnina 0 tai 1
+  public function getPaakayttaja() {
+      return $this->paakayttaja;
+  }
 }
