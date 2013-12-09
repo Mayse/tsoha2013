@@ -25,6 +25,7 @@ class Kayttaja {
         }
     }
 
+    //tarkistuksen puuttuu
     public static function setKayttaja($nimi, $salasana, $paakayttaja) {
         $sql = "INSERT kayttaja (knimi,salasana,paakayttaja) VALUES (?,?,?)";
         $kysely = getTietokanta()->prepare($sql);

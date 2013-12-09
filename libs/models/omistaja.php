@@ -32,18 +32,14 @@ class omistaja {
         $kysely->execute(array($knimi));
         $tulokset = $kysely->fetchAll();
         return $tulokset;
-        
-//        foreach ($kysely->fetchAll() as $tulos) {
-//            
-//            $vuoro = new omistaja();
-//            foreach ($tulos as $kentta => $arvo) {
-//                $vuoro->$kentta = $arvo;
-//            }
-//            $tulokset[] = $vuoro;
-//        }
-//        return $tulokset;        
-//        
+               
         }
+
+    public static function setOmistaja($snimi, $knimi) {
+        $sql = "INSERT INTO omistaja(snimi,knimi) VALUES (?,?)";
+        $kysely = getTietokanta()->prepare($sql);
+        $kysely->execute(array($snimi,$knimi));
     }
 
+}
 

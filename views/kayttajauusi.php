@@ -11,9 +11,11 @@
             salasana <input type="password" name="salasana"><br>
             Pääkäyttäjä <input type="checkbox" name="paakayttaja"><br>
         Omistamat saunat<br>
-        <?php
+        <?php $i = 0;
         foreach ($saunat as $sauna) {
-            echo $sauna->getNimi(); ?><input type="checkbox" name="<?php echo $sauna->getNimi(); ?>"><br><?php
+            $i++;
+            echo $sauna->getNimi(); ?><input type="checkbox" name="<?php echo $i; ?>" value="<?php echo $sauna->getNimi(); ?>"><br><?php
+            
         }
         ?>
 
