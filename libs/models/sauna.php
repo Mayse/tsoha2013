@@ -45,7 +45,7 @@ class Sauna {
             return $saunat;
         }
     }
-
+    
     public function getNimi() {
         return $this->snimi;
     }
@@ -56,6 +56,12 @@ class Sauna {
 
     public function getKoko() {
         return $this->koko;
+    }
+
+    public static function setSauna($snimi, $sijainti, $koko) {
+        $sql = "INSERT INTO sauna(snimi,sijainti,koko) VALUES (?,?,?)";
+        $kysely = getTietokanta()->prepare($sql);
+        $kysely->execute(array($snimi,$sijainti,$koko));
     }
 
 }
