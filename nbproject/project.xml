@@ -21,12 +21,23 @@
             <word>Kayttaja</word>
             <word>kirjaudu</word>
             <word>knimi</word>
+            <word>käyttäjä</word>
+            <word>käyttäjän</word>
+            <word>käyttäjää</word>
             <word>Loppumisaika</word>
+            <word>luo</word>
+            <word>luominen</word>
+            <word>muokkaa</word>
+            <word>nimi</word>
+            <word>Omistamat</word>
             <word>palaa</word>
+            <word>Pääkäyttäjä</word>
             <word>salasana</word>
+            <word>saunat</word>
             <word>Saunatietokanta</word>
             <word>sql</word>
             <word>ulos</word>
+            <word>uuden</word>
             <word>uusi</word>
             <word>vuoro</word>
         </spellchecker-wordlist>

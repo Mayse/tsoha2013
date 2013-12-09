@@ -7,8 +7,12 @@
     <body>
         <?php
         // put your code here
-        echo 'hallintanäkymäsivun pohja pääkäyttäjälle';
+        
         ?>
+        <a href="kayttajauusi.php">uusi käyttäjä</a> <br>
+        <a href="kayttajamuokkaa.php">muokkaa käyttäjää</a> <br>
+        <br>
+        <a href="saunauusi">uusi sauna</a>
         <div align="right"><a href="saunavuorot.php" >palaa</a></div>
     </body>
 </html>
