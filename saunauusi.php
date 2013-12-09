@@ -9,8 +9,6 @@ onPaakayttaja();
 $sivu = "views/saunauusi.php";
 require_once 'views/pohja.php';
 
-var_dump($_POST);
-
 if (!empty($_POST['nimi']) && !empty($_POST['sijainti']) && !empty($_POST['koko'])) {
     
 $nimi = $_POST['nimi'];
