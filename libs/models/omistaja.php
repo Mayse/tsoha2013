@@ -41,5 +41,11 @@ class omistaja {
         $kysely->execute(array($snimi,$knimi));
     }
 
+    public static function purgeOmistaja($knimi) {
+        $sql = "DELETE FROM omistaja where knimi=?";
+        $kysely = getTietokanta()->prepare($sql);
+        $kysely->execute(array($knimi));
+    }
+
 }
 

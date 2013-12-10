@@ -24,6 +24,27 @@ class Kayttaja {
             return $kayttaja;
         }
     }
+    
+    public static function getKayttajat(){
+        $sql = "SELECT knimi from kayttaja";
+        $kysely = getTietokanta()->prepare($sql);
+        $kysely->execute();
+        
+        $tulos = $kysely->fetchAll();
+        if ($tulos == NULL) {
+            return NULL;
+        } else {
+            $kayttajat = array();
+            foreach ($tulos as $iteroitukayttaja) {
+                $kayttaja = new Kayttaja();
+                foreach ($iteroitukayttaja as $kentta => $arvo) {
+                    $kayttaja->$kentta = $arvo;
+                }
+                $kayttajat[] = $kayttaja;
+            }
+            return $kayttajat;
+        }
+    }
 
     //tarkistuksen puuttuu
     public static function setKayttaja($nimi, $salasana, $paakayttaja) {
@@ -31,6 +52,12 @@ class Kayttaja {
         $kysely = getTietokanta()->prepare($sql);
         $kysely->execute(array($nimi, $salasana, $paakayttaja));
         return true;
+    }
+    
+    public static function updateSalasana($knimi,$salasana){
+        $sql = "update kayttaja set salasana=? where knimi=?";
+        $kysely = getTietokanta()->prepare($sql);
+        $kysely->execute(array($salasana,$knimi));
     }
 
     public function getNimi() {
