@@ -27,12 +27,11 @@ function onKirjautunut(){
     
 }
 
+//ohjaa käyttäjän saunavuoronäkymään mikäli ei ole pääkäyttäjä
 function onPaakayttaja(){
     if ($_SESSION['kirjautunut']->getPaakayttaja()){
-        return (boolean) TRUE;
-        
-    }
-    
+        return (boolean) TRUE;        
+    }    
     header("Location: saunavuorot.php");
     exit();
     

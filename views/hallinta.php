@@ -5,10 +5,7 @@
         <title></title>
     </head>
     <body>
-        <?php
-        // put your code here
         
-        ?>
         <a href="kayttajauusi.php">uusi käyttäjä</a> <br>
         <a href="kayttajamuokkaa.php">muokkaa käyttäjää</a> <br>
         <br>

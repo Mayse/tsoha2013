@@ -31,9 +31,7 @@ if ($kayttaja != null) {
     $_SESSION['kirjautunut'] = $kayttaja;    
     header('Location: saunavuorot.php');
 } else {
-    /* Väärän tunnuksen syöttänyt saa eteensä lomakkeen ja virheen.
-     * Tässä käytetään omalta yläluokalta perittyjä yleiskäyttöisiä metodeja.
-     */
+         
     naytaNakyma("views/kirjautuminen.php", array(
         'virhe' => "Kirjautuminen ei onnistunut. Käyttäjänimi tai salasana väärin",
     ));

@@ -26,8 +26,7 @@ if (!empty($_POST['nimi']) && !empty($_POST['salasana'])) {
         $paakayttaja = "0";
     }
     if(Kayttaja::setKayttaja($nimi, $salasana, $paakayttaja)){
-        echo "lisätty käyttäjä";
-        
+        echo "lisätty käyttäjä";        
     }
     
     //lisätään käyttäjälle rastitetut saunat
@@ -35,9 +34,7 @@ if (!empty($_POST['nimi']) && !empty($_POST['salasana'])) {
         if (($_POST[$i])!=NULL) {
             $snimi = $_POST[$i];
             $knimi = $nimi;
-            omistaja::setOmistaja($snimi,$knimi);
-          
-        }
-    
-}
+            omistaja::setOmistaja($snimi,$knimi);      
+            }   
     }
+}

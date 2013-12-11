@@ -14,7 +14,7 @@
             }
         } 
         
-        //muutoin piirretään muokkauselementit
+        //muutoin piirretään muokkauselementit valitusta käyttäjästä
         else {
             ?><br><?php echo $_GET['kayttaja'] . " " ?>
             

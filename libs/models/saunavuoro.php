@@ -25,12 +25,6 @@ class saunavuoro {
             return $sauna;
         }
     }
-    
-    public static function setSaunavuoro($snimi,$alkuaika,$loppuaika){
-        $sql = "insert into saunavuoro(snimi,alkuaika,loppuaika) values (?,?,?)";
-        $kysely = getTietokanta()->prepare($sql);
-        $kysely->execute(array($snimi,$alkuaika,$loppuaika));
-    }
 
 //palauttaa vuorot jotka eivät ole vielä päättyneet
     public static function getSaunavuorot() {
@@ -76,16 +70,16 @@ class saunavuoro {
         return $this->ID;
     }
 
-    public function getOsallistujia() {
-//        toteuttamatta
-        return "palauttaa osallistujamäärän";
+    public static function setSaunavuoro($snimi,$alkuaika,$loppuaika){
+        $sql = "insert into saunavuoro(snimi,alkuaika,loppuaika) values (?,?,?)";
+        $kysely = getTietokanta()->prepare($sql);
+        $kysely->execute(array($snimi,$alkuaika,$loppuaika));
     }
 
     public static function updateSaunavuoro($id, $alkuaika, $loppuaika) {
         $sql = "UPDATE saunavuoro SET alkuaika=?, loppuaika=? WHERE ID=?";
         $kysely = getTietokanta()->prepare($sql);
-        $kysely->execute(array($alkuaika,$loppuaika,$id));
-        
+        $kysely->execute(array($alkuaika,$loppuaika,$id));   
     }
 
     public static function deleteSaunavuoro($id) {

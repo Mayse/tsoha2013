@@ -18,8 +18,6 @@ $loppuaika = $vuoro->getLoppuaika();
 $sijainti = Sauna::getSauna($snimi)->getSijainti();
 $taynna = $vuoro->onkoTaynna($id);
 
-
-//$id = "1"; //staattinen placeholder
 $ilmoittautuneet = ilmoittautuminen::getIlmoittautuneet($id);
 $sivu = 'views/ilmoittautuminen.php';
 require 'views/pohja.php';

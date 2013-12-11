@@ -8,6 +8,7 @@ require_once 'libs/tietokanta.php';
 
 onKirjautunut();
 
+//haetaan vuorot ja käyttäjä jotta piirretään tarvittaessa uuden vuoron luomispainike
 $vuorot = saunavuoro::getSaunavuorot();
 $knimi = $_SESSION['kirjautunut']->getNimi();
 

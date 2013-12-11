@@ -2,8 +2,6 @@
 
 use PDO;
 
-//put your code here
-    //Yleinen muoto
     function getTietokanta(){
     $tunnus = "root";
 $salasana= "mysql tietokannan salasana";

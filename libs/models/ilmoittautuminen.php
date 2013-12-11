@@ -2,8 +2,6 @@
 
 class ilmoittautuminen {
 
-    //put your code here
-
     public static function getIlmoittautujamaara($id) {
         $sql = "select count(knimi) from ilmoittautuminen where ID = ?";
         $kysely = getTietokanta()->prepare($sql);

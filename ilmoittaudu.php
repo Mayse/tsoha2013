@@ -7,7 +7,6 @@ require_once 'libs/models/sauna.php';
 
 onKirjautunut();
 
-//var_dump($_SESSION);
 $id = $_POST["id"];
 $knimi = $_SESSION['kirjautunut']->getNimi();
 $suunta = $_POST["suunta"];
