@@ -15,8 +15,6 @@
         Saunojien enimmäismäärä:<input type="number" name="koko"><br>
         <button>Luo sauna</button>
         </form>
-        <?php
-        // put your code here
-        ?>
+        <div align="right"><a href="hallinta.php" >palaa</a></div>
     </body>
 </html>

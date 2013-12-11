@@ -26,7 +26,7 @@ class omistaja {
     }
 
     public static function getOmistetut($knimi) {
-        $sql = "select snimi from omistaja where knimi=?";
+        $sql = "select snimi from omistaja where knimi=? order by snimi";
         $kysely = getTietokanta()->prepare($sql);
         
         $kysely->execute(array($knimi));
@@ -36,6 +36,9 @@ class omistaja {
         }
 
     public static function setOmistaja($snimi, $knimi) {
+        if ($snimi==NULL || $knimi==NULL) {
+            return;
+        }
         $sql = "INSERT INTO omistaja(snimi,knimi) VALUES (?,?)";
         $kysely = getTietokanta()->prepare($sql);
         $kysely->execute(array($snimi,$knimi));

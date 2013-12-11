@@ -19,7 +19,9 @@
             ?><br><?php echo $_GET['kayttaja'] . " " ?><button action="delete">Poista käyttäjä</button> <br>        
             <form method="post">Uusi salasana<input type="text" name="salasana"><br>  
             Omistamat saunat<br>
-                    <?php $i = 0;
+                    <?php 
+                    
+                    $i = 0;
                     foreach ($saunat as $sauna) {
                     $i++;
                     echo $sauna->getNimi(); ?>
@@ -29,10 +31,18 @@
                         checked="yes"<?php
                     } ?>><br>
                         <?php 
-                    }?>
+                        }?>
+                        
+                        <input type="hidden" name="i" value="<?php echo $i; ?>">
 
         <button type="submit">tallenna</button><br>
         </form><?php
         }?>
+            <?php if (isset($_GET['kayttaja'])) {
+    ?><div align="right"><a href="kayttajamuokkaa.php" >palaa</a></div><?php
+} else {
+    ?><div align="right"><a href="hallinta.php" >palaa</a></div><?php
+}?>
+            
     </body>
 </html>

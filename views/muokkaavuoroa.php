@@ -21,7 +21,7 @@ and open the template in the editor.
             <input type="hidden" name="action" value="update">
             Alkamisaika: <input type="text" name="alkamisaika" value="<?php echo $alkuaika; ?>"><br>
             Loppumisaika: <input type="text" name="loppumisaika" value="<?php echo $loppuaika; ?>"><br>
-<button>submit</button>
+<button>tallenna</button>
 </form>
         <div align="right"><a href="ilmoittautuminen.php?id=<?php echo $id; ?>">palaa</a></div>
     </body>

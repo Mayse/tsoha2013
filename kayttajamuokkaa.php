@@ -26,17 +26,19 @@ if (!empty($_POST['salasana'])) {
 }
 
 
-//jos postissa on saunoja niin poistetaan kaikki saunat ja lisätätään takaisin rastitetut saunat, onko tässä mitään järkeä
-if (!empty($_POST[0])) {
+if (isset($_POST['i'])) {
+//tallenna nappia on painettu, poistetaan kaikki saunat
     omistaja::purgeOmistaja($_GET['kayttaja']);
-}
-    
 
+//ja lisätään ne takaisin.
+$i = $_POST['i'];
 for ($i; $i>0; $i--){
-        
+    if (isset($_POST[$i])) {
+
             $snimi = $_POST[$i];
             $knimi = $_GET['kayttaja'];
             omistaja::setOmistaja($snimi, $knimi);
-          
+            }      
         }
-        
+        header("Location: kayttajamuokkaa.php?kayttaja=" . $_GET['kayttaja']); //piirretään sivu uudestaan jotta checkboxit päivittyvät
+}        
