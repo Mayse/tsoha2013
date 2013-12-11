@@ -16,7 +16,15 @@
         
         //muutoin piirretään muokkauselementit
         else {
-            ?><br><?php echo $_GET['kayttaja'] . " " ?><button action="delete">Poista käyttäjä</button> <br>        
+            ?><br><?php echo $_GET['kayttaja'] . " " ?>
+            
+            <form method="post" action="kayttajapoista.php">
+                <input type="hidden" name="kayttaja" value="<?php echo $_GET['kayttaja']?>">
+                       
+                <button type="submit">poista käyttäjä</button>
+            
+            </form> <br>        
+            
             <form method="post">Uusi salasana<input type="text" name="salasana"><br>  
             Omistamat saunat<br>
                     <?php 

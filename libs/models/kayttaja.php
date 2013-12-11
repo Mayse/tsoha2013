@@ -54,6 +54,12 @@ class Kayttaja {
         return true;
     }
     
+    public static function deleteKayttaja($knimi){
+        $sql = "DELETE FROM kayttaja WHERE knimi=?";
+        $kysely = getTietokanta()->prepare($sql);
+        $kysely->execute(array($knimi));
+    }
+
     public static function updateSalasana($knimi,$salasana){
         $sql = "update kayttaja set salasana=? where knimi=?";
         $kysely = getTietokanta()->prepare($sql);
